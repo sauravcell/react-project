@@ -1,14 +1,16 @@
 import { UserFavoriteFood } from "./UserFavoriteFoods"
+import { UserUsername } from "./UserUsername"
 
-export function UserProfile(){
+export function UserProfile(props){
+	console.log(props);
+	props.callMe();
 	return (
 		<div id='user-profile'>
-			<p>Username: Bob</p>
-			<div>
-				<span>Email: </span>
-				<span>saurav@gmail.com</span>
-			</div>
+			<UserUsername username='bob'/>
+			<b>Age: </b>
+			<span>{props.age}</span>
 			<UserFavoriteFood/>
+			{props.isLoggedIn}
 			
 		</div>
 	)
