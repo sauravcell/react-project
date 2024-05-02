@@ -1,36 +1,31 @@
-// import PropTypes from 'prop-types'
-import { UserProfile } from "./components/UserProfile"
+import { UserDetails } from "./components/UserDetails"
+
 
 export default function App() {
-	const callMe = () => {
-		console.log("Running callMe");
-	};
-	console.log('Output');
+	const mockUsers = [		//consider it to be json returned by api call
+		{
+			id: 1,
+			username: "anson",
+			email: "anson@gmail.com",
+		},
+		{
+			id: 2,
+			username:"saurav",
+			email: "saurav@gmail.com"
+		}
+	]
 
+
+//mockUser is converted to jsx from json
 	return (
-		<>
-
-			<h1>Root Component</h1>
-			<UserProfile
-				username="Alias"
-				age={20}
-				isLoggedIn={true}
-				favoriteFoods={[
-					{
-						item: 'pizza',
-						id: 1,
-					},
-					{
-						item: 'lassi',
-						id: 2,
-					}
-				]}
-				callMe={callMe}
-			/>
-
-
-		</>
-
+		<div>
+			{mockUsers.map(
+				(user)=>{
+					return(
+						<UserDetails key={user.id} user={user} />						
+					)
+				}
+			)}
+		</div>
 	)
-
 }
