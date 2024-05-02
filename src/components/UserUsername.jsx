@@ -1,9 +1,9 @@
 export function UserUsername(props){
-	console.log(props);
+
 	return(
 		<div>
 			<b>Username: </b>
-			<span></span>
+			<span>{props.username}</span>
 		</div>
 	)
 }
