@@ -6,7 +6,7 @@ export function UserProfile(props) {
 	// console.log({ 'printing props': props });
 	// props.callMe();
 	return (
-		<div id='user-profile'>
+		<>
 			<UserUsername username={props.username} />
 			<b>Age: </b>
 			<span>{props.age}</span>
@@ -14,7 +14,7 @@ export function UserProfile(props) {
 			{/* <b>Session: </b>
 			<span>{props.isLoggedIn}</span> */}
 
-		</div>
+		</>
 	)
 
 

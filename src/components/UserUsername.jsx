@@ -1,9 +1,9 @@
-export function UserUsername(props){
+export function UserUsername(props) {
 
-	return(
-		<div>
+	return (
+		<>
 			<b>Username: </b>
 			<span>{props.username}</span>
-		</div>
+		</>
 	)
 }

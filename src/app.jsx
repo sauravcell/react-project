@@ -9,26 +9,26 @@ export default function App() {
 
 	return (
 		<>
-			<div>
-				<h1>Root Component</h1>
-				<UserProfile
-					username="Alias" 
-					age={20}
-					isLoggedIn={true}
-					favoriteFoods={[
-						{
-							item: 'pizza',
-							id: 1,
-						},
-						{
-							item: 'lassi',
-							id: 2,
-						}
-					]}
-					callMe={callMe}
-				/>
 
-			</div>
+			<h1>Root Component</h1>
+			<UserProfile
+				username="Alias"
+				age={20}
+				isLoggedIn={true}
+				favoriteFoods={[
+					{
+						item: 'pizza',
+						id: 1,
+					},
+					{
+						item: 'lassi',
+						id: 2,
+					}
+				]}
+				callMe={callMe}
+			/>
+
+
 		</>
 
 	)
