@@ -8,6 +8,7 @@ export function UserProfile(props) {
 	return (
 		<>
 			<UserUsername username={props.username} />
+			<br></br>
 			<b>Age: </b>
 			<span>{props.age}</span>
 			<UserFavoriteFood favoriteFoods={props.favoriteFoods} />
