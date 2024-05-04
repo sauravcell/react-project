@@ -1,11 +1,10 @@
 import PropTypes from "prop-types"
 import { useState } from "react"
 
-export function UserDetails({ user, setUsers }) {
-
-	const [isEditing, setIsEditing] = useState(false);
-	const [username, setUsername] = useState(user.username);
-	const [email, setEmail] = useState(user.email)
+export function UserDetails({ user, setUsers }) {		//setUsers hook is passed to child component to modify users array using edit & delete operation
+	const [isEditing, setIsEditing] = useState(false);			//used to track if client is editing 
+	const [username, setUsername] = useState(user.username);	//used to update username in edit operation
+	const [email, setEmail] = useState(user.email);				//used to update username in edit operation	
 
 //"EDIT || DELETE || SAVE" operations are done in immutable manner. filter & map is used to achieve immutability bcz they returns a new array using the present array.
 	return (
