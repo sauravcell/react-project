@@ -38,7 +38,7 @@ export default function App() {
 
 				const json =await response.json();		//response is returned aftr some time
 				console.log(json)
-
+				console.log(controller.signal);
 			} 
 			catch (err) {
 				console.log(err);
