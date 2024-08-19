@@ -1,4 +1,25 @@
+import { useEffect } from "react";
 export function LoginForm() {
+	
+	useEffect(() => {	// showing how to add & remove events based on state change
+
+		const resizeEventhandler = (e) => {
+			console.log('window/viewport resized');
+		}
+
+		const handleDocumentClick = (e)=>{
+			console.log('clicked document');
+		}
+		window.addEventListener('resize', resizeEventhandler)
+		document.addEventListener('click',handleDocumentClick)
+		return () => {
+			console.log('unmounting login form');
+			console.log('Removing resize event listener');
+			window.removeEventListener("resize", resizeEventhandler);
+			document.removeEventListener("click", handleDocumentClick);
+		}
+	}, [])	//empty array means call back should execute only once.
+	
 	return (
 		//Example of registering form submit events with a HTML element
 		<form 
