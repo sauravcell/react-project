@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useDocumentClick } from "../utils/hooks/useDocumentClick";
 export function LoginForm() {
 	
 	useEffect(() => {	// showing how to add & remove events based on state change
@@ -7,19 +8,17 @@ export function LoginForm() {
 			console.log('window/viewport resized');
 		}
 
-		const handleDocumentClick = (e)=>{
-			console.log('clicked document');
-		}
+		
 		window.addEventListener('resize', resizeEventhandler)
-		document.addEventListener('click',handleDocumentClick)
 		return () => {
 			console.log('unmounting login form');
 			console.log('Removing resize event listener');
 			window.removeEventListener("resize", resizeEventhandler);
-			document.removeEventListener("click", handleDocumentClick);
 		}
 	}, [])	//empty array means call back should execute only once.
 	
+	useDocumentClick();		//example of usage of custom hooks
+
 	return (
 		//Example of registering form submit events with a HTML element
 		<form 
